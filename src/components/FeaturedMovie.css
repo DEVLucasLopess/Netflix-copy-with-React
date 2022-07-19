@@ -12,4 +12,79 @@
     width: inherit;
     height: inherit;
     background: linear-gradient(to right, #111 30%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    margin-top: -60px;
+}
+
+.featured--name {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.featured--info {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/*inline-block deixa uma div do ladro da outra respeitando o tamanho de um bloco ... se vc deixar so o inline, fica um do lado do outro*/
+
+.featured--year, 
+.featured--points, 
+.featured--seasons {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.featured--points {
+    color: #46D369;
+}
+
+.featured--description {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #999;
+    max-width: 40%;
+}
+
+.featured--buttons {
+    margin-top: 15px;
+}
+
+.featured--watchbutton, 
+.featured--mylistbutton {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+}
+
+.featured--watchbutton:hover, 
+.featured--mylistbutton:hover {
+    transition: 0.2s;
+    opacity: 0.7;
+}   
+
+.featured--watchbutton {
+    background-color: #fff;
+    color: #000;
+}
+
+.featured--mylistbutton {
+    background-color: #333;
+    color: #fff;
+}
+
+.featured--genres {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #999;
 }
