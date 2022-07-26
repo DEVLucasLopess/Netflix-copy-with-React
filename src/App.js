@@ -5,20 +5,19 @@
  import Header from "./components/Header";
  import './App.css';
 
-
 export default () => {
 
-  const [movieList, setMovieList] = useState([]); //comandos se React *estuda-los*
+  const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false); //deixando o menu transparente quando nescessario.
 
   useEffect(() => {
     const loadAll = async () => {
-      // Pegando a lista TOTAL
+      // Pegando a lista de todos os filmes. 
       let list = await Tmdb.getHomeList();
       setMovieList(list);
 
-      // pegando o filme em destaque
+      // pegando o filme em destaque (originais do netflix tem mais informação que os outros.)
       let originals = list.filter(i=>i.slug === 'originals');
       let randomChose = Math.floor(Math.random() * (originals[0].items.results.length -1));
       let chosen = originals[0].items.results[randomChose];
@@ -47,13 +46,6 @@ export default () => {
  }, []);
 
     return (
-        // header
-        // Destaque
-        // As listas
-        // Rodapé
-        //estudar o ".map" comandos React. 
-        //estudar quando for colocar um emoji é importante você colocar o role como img e aria-label com o nome do emoji. 
-
         <div className="page">
 
           <Header black={blackHeader} />
@@ -69,7 +61,6 @@ export default () => {
           </section> 
 
           <footer>
-            Feito com amor <span role="img" aria-label="coração">❤️</span> por Mineiro<br></br>
             Direitos de imagem para Netflix.<br></br>
             Dados pegos do site themoviedb.org.<br></br>
           </footer>
